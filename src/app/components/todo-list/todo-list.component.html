@@ -1,0 +1,17 @@
+<div class="lists">
+  <div class="bg-white p-3 rounded box-shadow-4" *ngIf="lists.length > 0">
+    <div class="item" *ngFor="let list of lists">
+      <div class="card text-white mb-3" [ngClass]="[list.status == 1 ? 'bg-success' : 'bg-danger']">
+        <div class="card-header">{{ list.title }}</div>
+        <div class="card-body">
+          <p class="card-text">{{ list.description }}</p>
+          <div class="text-end">
+            <button (click)="toggleStatusTodo(list.id)" class="btn btn-light px-3 mx-2">Toggle Status</button>
+            <button (click)="editTodo(list)" class="btn btn-info text-white px-3">Edit</button>
+            <button (click)="deleteTodo(list.id)" class="btn btn-warning px-3 text-white mx-2">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
